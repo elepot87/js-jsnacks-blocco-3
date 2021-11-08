@@ -20,7 +20,7 @@ const player = {
   firstName: "John",
   lastName: "Doe",
   age: 22,
-  // averagePointsGame: getAveragePoints(),
+  averagePointsGame: getAveragePoints(0, 50),
   // successThreeShots: getSuccessThreeShots(),
 };
 
@@ -58,4 +58,9 @@ function getRandomNumber(length) {
 function getCodePlayer(function1, function2) {
   let code = function1 + function2;
   return code;
+}
+
+// Generare un numero intero compreso tra 0 e 50
+function getAveragePoints(min, max) {
+  return Math.floor(Math.random() * (max + 1));
 }
