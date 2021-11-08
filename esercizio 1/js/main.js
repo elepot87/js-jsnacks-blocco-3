@@ -21,7 +21,7 @@ const player = {
   lastName: "Doe",
   age: 22,
   averagePointsGame: getAveragePoints(0, 50),
-  // successThreeShots: getSuccessThreeShots(),
+  successThreeShots: getSuccessThreeShots(0, 100),
 };
 
 console.log(player);
@@ -63,4 +63,10 @@ function getCodePlayer(function1, function2) {
 // Generare un numero intero compreso tra 0 e 50
 function getAveragePoints(min, max) {
   return Math.floor(Math.random() * (max + 1));
+}
+
+// Generare una % compresa tra 0 e 100
+function getSuccessThreeShots(min, max) {
+  let numbRandom = Math.floor(Math.random() * (max + 1));
+  return `${numbRandom}%`;
 }
