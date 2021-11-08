@@ -27,6 +27,18 @@ const player = {
 const { firstName, lastName, age, codePlayerTot } = player;
 console.log(firstName, lastName, age, codePlayerTot);
 
+// Creare un array di 10 giocatori di basket, con le regole sopra indicate
+
+const newPlayers = [];
+
+for (let i = 0; i < 10; i++) {
+  let createPlayer;
+  createPlayer = getRandomPlayer();
+  newPlayers.push(createPlayer);
+}
+
+console.log(newPlayers);
+
 /************************
 FUNZIONI
 ************************/
@@ -70,4 +82,17 @@ function getAveragePoints(min, max) {
 function getSuccessThreeShots(min, max) {
   let numbRandom = Math.floor(Math.random() * (max + 1));
   return `${numbRandom}%`;
+}
+
+// Generare giocatore (oggetto)
+function getRandomPlayer() {
+  let player = {
+    codePlayerTot: getCodePlayer(getRandomString(3), getRandomNumber(3)),
+    firstName: "Mario",
+    lastName: "Rossi",
+    age: `25 anni`,
+    averagePointsGame: getAveragePoints(0, 50),
+    successThreeShots: getSuccessThreeShots(0, 100),
+  };
+  return player;
 }
