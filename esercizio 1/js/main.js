@@ -19,12 +19,13 @@ const player = {
   codePlayerTot: getCodePlayer(getRandomString(3), getRandomNumber(3)),
   firstName: "John",
   lastName: "Doe",
-  age: 22,
+  age: `22 anni`,
   averagePointsGame: getAveragePoints(0, 50),
   successThreeShots: getSuccessThreeShots(0, 100),
 };
 
-console.log(player);
+const { firstName, lastName, age, codePlayerTot } = player;
+console.log(firstName, lastName, age, codePlayerTot);
 
 /************************
 FUNZIONI
