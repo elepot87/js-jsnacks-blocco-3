@@ -42,7 +42,9 @@ console.log(newPlayers);
 // 5. Creare un nuovo array con i giocatori che hanno una media di punti superiore a 35 e la percentuale di successo per i tiri da 3 punti superiore all’80%.
 
 const successPlayer = newPlayers.filter((e) => {
-  return e.averagePointsGame > 35 && e.successThreeShots > 80;
+  return (
+    e.averagePointsGame > 35 && parseInt(e.successThreeShots.split("%")) > 80
+  );
 });
 
 console.log(successPlayer);
@@ -89,7 +91,7 @@ function getAveragePoints(min, max) {
 // Generare una % compresa tra 0 e 100
 function getSuccessThreeShots(min, max) {
   let numbRandom = Math.floor(Math.random() * (max + 1));
-  return numbRandom;
+  return `${numbRandom}%`;
 }
 
 // Generare giocatore (oggetto)
